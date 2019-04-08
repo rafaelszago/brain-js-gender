@@ -1,9 +1,11 @@
-const brain = import('brain.js'); 
+const brain = require('brain.js'); 
 
 // create configuration for training
 
 const config = {
   iterations: 1500,
+  log: true,
+  logPeriod: 50,
   layers: [10]
 };
 
@@ -43,7 +45,7 @@ const data = [
 ];
 
 // the name we would test
-const test = "Giordana";
+const test = "Iris";
 
 const network = new brain.recurrent.LSTM();
 network.train(data, config);
